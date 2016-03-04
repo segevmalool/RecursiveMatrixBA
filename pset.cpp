@@ -7,6 +7,7 @@
 #include <time.h>
 #include <cmath>
 #include <sstream>
+#include <vector>
 
 using namespace std; 
 using namespace cv;
@@ -25,8 +26,8 @@ int main (int argc, char * argv[]) {
     Mat z;
     Mat I;
     int i = 1;
-    Mat II = Mat::eye(pow(2,k+1),pow(2,k+1),CV_64F);
 
+    //note the implied use of recursion to minimize the number of iterations.
     while (i <= k) {
       z = Mat::zeros(pow(2,i), pow(2,i), CV_64F);
       I = N+Mat::eye(pow(2,i), pow(2,i), CV_64F);
@@ -38,10 +39,9 @@ int main (int argc, char * argv[]) {
       i++;      
     }
     i = 1;
-    Mat NT = N.t();
+    Mat M = N+N.t();
 
-    imwrite("pset.png",N+NT);
-    imshow("halppiner", N+NT);
+    imshow("halppiner", N);
 
     while (!(waitKey(33)==27));
     return(0);
