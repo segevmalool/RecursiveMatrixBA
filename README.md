@@ -18,4 +18,4 @@ which corresponds to
 
 or in decimal: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15!
 
-Interestingly, the set version of the usual order has an efficient recursive structure, while Gray code does not preserve this order.
+Interestingly, the set version of the usual order has an efficient recursive structure, while Gray code corresponds to an unusual order.
